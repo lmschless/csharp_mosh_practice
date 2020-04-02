@@ -3,16 +3,6 @@ using Microsoft.VisualBasic.CompilerServices;
 
 namespace Classes
 {
-    public class Point
-    {
-        public int X;
-        public int Y;
-        public Point(int x, int y)
-        {
-            this.X = x;
-            this.Y = y;
-        }
-    }
 
     public class Person
     {
@@ -57,6 +47,22 @@ namespace Classes
 
             Console.WriteLine(customer.Id);
             Console.WriteLine(customer.Name);
+
+            try
+            {
+                var point = new Point(10, 20);
+                point.Move(null);
+                Console.WriteLine("Point is at ({0}, {1})", point.X, point.Y);
+
+                point.Move(100, 200);
+                Console.WriteLine("Point is at ({0}, {1})", point.X, point.Y);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("An unexpected error occured");
+            }
+
+
 
         }
     }
