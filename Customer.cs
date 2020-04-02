@@ -7,7 +7,8 @@ namespace Classes
         public int Id;
         public string Name;
         // initlize a new empty list in the class itself, instead of the constructor
-        public List<Order> Orders = new List<Order>();
+        // set as readonly so the empty list doesn't accidentally get re-initilized.
+        public readonly List<Order> Orders = new List<Order>();
 
         // blue name = constructor
         // orange name = method
@@ -24,16 +25,11 @@ namespace Classes
 
         public void Promote()
         {
-            Orders = new List<Order>();
+            //Orders = new List<Order>();
             // ... 
         }
 
 
-
-    }
-
-    public class Order
-    {
 
     }
 
