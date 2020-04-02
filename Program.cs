@@ -31,7 +31,7 @@ namespace Classes
             //var p = Person.Parse("John");
             //p.Introduce("Mosh");
 
-            var customer = new Customer();
+            var customer = new Customer(1, "John");
             Console.WriteLine(customer.Id);
             Console.WriteLine(customer.Name);
 
