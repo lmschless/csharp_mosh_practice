@@ -5,11 +5,26 @@ namespace Classes
 {
     class Program
     {
+        /// <summary>
+        /// Two differnet ways to handle a conversion from string to int.
+        /// One using a try/catch block with an exception
+        /// The other uses the out method which is NOT recommended.
+        /// </summary>
         static void Main(string[] args)
         {
-            //var number = int.Parse("abc");
-            int number;
-            var result = int.TryParse("abc", out number);
+            // best way
+            try
+            {
+                var num = int.Parse("abc");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Conversion failed");
+
+            }
+
+            // this way is not recommended
+            var result = int.TryParse("abc", out int number);
             if (result)
             {
                 Console.WriteLine(number);
@@ -17,18 +32,6 @@ namespace Classes
             else
             {
                 Console.WriteLine("Conversion failed");
-            }
-        }
-        public class Calculator
-        {
-            public int Add(params int[] numbers)
-            {
-                var sum = 0;
-                foreach (var number in numbers)
-                {
-                    sum += number;
-                }
-                return sum;
             }
         }
 
