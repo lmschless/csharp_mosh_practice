@@ -28,8 +28,14 @@ namespace Classes
         {
             // don't need to create a new Person because the Parse method is static.
             //var person = new Person();
-            var p = Person.Parse("John");
-            p.Introduce("Mosh");
+            //var p = Person.Parse("John");
+            //p.Introduce("Mosh");
+
+            var customer = new Customer();
+            Console.WriteLine(customer.Id);
+            Console.WriteLine(customer.Name);
+
+
         }
     }
 }
