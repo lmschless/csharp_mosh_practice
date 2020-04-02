@@ -20,7 +20,7 @@ namespace Classes
         }
 
         public Customer(int id, string name)
-            : this(id)
+            : this(id) // calls the constructor above that takes an Id parameter. 
         {
             this.Name = name;
         }

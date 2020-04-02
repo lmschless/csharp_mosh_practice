@@ -1,7 +1,19 @@
 ﻿using System;
+using Microsoft.VisualBasic.CompilerServices;
 
 namespace Classes
 {
+    public class Point
+    {
+        public int X;
+        public int Y;
+        public Point(int x, int y)
+        {
+            this.X = x;
+            this.Y = y;
+        }
+    }
+
     public class Person
     {
         public string Name;
@@ -31,7 +43,14 @@ namespace Classes
             //var p = Person.Parse("John");
             //p.Introduce("Mosh");
 
-            var customer = new Customer(1, "John");
+            // old syntax
+            //var customer = new Customer(1, "John");
+            // new syntax (object initialization syntax)
+            var customer = new Customer
+            {
+                Id = 1,
+                Name = "John"
+            };
 
             var order = new Order();
             customer.Orders.Add(order);
